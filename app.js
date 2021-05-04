@@ -3,6 +3,7 @@ const port = 3000
 const app = express()
 const exphbs = require('express-handlebars')
 const mongoose = require('mongoose')
+const restaurant = require('./models/restaurant')
 
 mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true })
 
@@ -18,7 +19,10 @@ app.engine('hbs', exphbs({ defaultLayout: 'main', extname: 'hbs' }))
 app.set('view engine', 'hbs')
 
 app.get('/', (req, res) => {
-  res.render('index')
+  restaurant.find()
+    .lean()
+    .then(restaurant => res.render('index', { restaurant }))
+    .catch(error => console.error(error))
 })
 
 app.listen(port, () => {
