@@ -25,6 +25,10 @@ app.get('/', (req, res) => {
     .catch(error => console.error(error))
 })
 
+app.get('/restaurant/new', (req, res) => {
+  res.render('new')
+})
+
 app.listen(port, () => {
   console.log(`Restaurant list is on http://localhost:${port}`)
 })
