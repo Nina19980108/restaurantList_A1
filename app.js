@@ -39,6 +39,14 @@ app.post('/restaurant/new', (req, res) => {
     .catch(error => console.error(error))
 })
 
+app.get('/restaurant/:id', (req, res) => {
+  const id = req.params.id
+  return restaurant.findById(id)
+    .lean()
+    .then(restaurant => res.render('detail', { restaurant }))
+    .catch(error => console.error(error))
+})
+
 app.listen(port, () => {
   console.log(`Restaurant list is on http://localhost:${port}`)
 })

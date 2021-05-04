@@ -1,14 +1,30 @@
 <div class="container mt-5 d-flex justify-content-center">
 
   <div class="card mb-3 col-sm-6">
-    <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg" class="card-img-top"
-      alt="restaurant-image">
+    <img src="{{ restaurant.image }}" class="card-img-top" alt="restaurant-image">
     <div class="card-body">
-      <h5 class="card-title">Sababa 沙巴巴中東美食</h5>
-      <i class="fas fa-utensils"></i>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-        This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <div class="d-flex">
+        <h4 class="card-title mb-4">{{ restaurant.name }}</h4>
+        <i class="fas fa-star mt-2 mx-3"></i>
+        <p class="p-auto mt-1" style="color: rgb(255, 111, 0);">{{ restaurant.rating }}</p>
+      </div>
+
+      <div class="d-flex mx-2">
+        <i class="fas fa-utensils mt-1"></i>
+        <p class="mx-3">{{ restaurant.category }}</p>
+      </div>
+
+      <div class="d-flex mx-2">
+        <a href="{{ restaurant.google_map }}"><i class="fas fa-map-marker-alt mt-1"></i></a>
+        <p class="mx-3">{{ restaurant.location }}</p>
+      </div>
+
+      <div class="d-flex mx-2">
+        <i class="fas fa-phone-alt mt-1"></i>
+        <p class="mx-3">{{ restaurant.phone }}</p>
+      </div>
+
+      <p class="card-text mt-3 p-1">{{ restaurant.description }}</p>
     </div>
   </div>
 
