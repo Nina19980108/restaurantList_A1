@@ -1,1 +1,85 @@
-<h1>this is a restaurant list.</h1>
+<div class="container d-flex p-2 mt-5 justify-content-between flex-wrap">
+
+  <div class="container d-flex p-2 mt-5 justify-content-between">
+
+    {{!-- search bar --}}
+    <div class="input-group mb-3 w-25">
+      <input type="text" class="form-control" placeholder="restaurant's name..." aria-label="restaurant's name"
+        aria-describedby="button-addon2">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+    </div>
+
+    {{!-- sort input --}}
+    <div class="input-group mb-3 w-25">
+      <select class="form-select" id="sort">
+        <option selected>sort</option>
+        <option value="asc">A -> Z</option>
+        <option value="desc">Z -> A</option>
+        <option value="category">類別</option>
+        <option value="location">地區</option>
+      </select>
+    </div>
+
+  </div>
+
+
+  {{!-- restaurants --}}
+
+  <div class="container d-flex flex-wrap justify-content-between">
+
+    <div class="card mb-5" style="width: 22rem;">
+      <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg" class="card-img-top"
+        alt="restaurant-image">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">restaurant name</li>
+      </ul>
+      <div class="card-body d-flex justify-content-end align-items-center">
+        <a href="#" class="card-link">Edit</a>
+        <a href="#" class="card-link">Detail</a>
+        <button class="btn btn-outline-secondary mx-3">Delete</button>
+      </div>
+    </div>
+
+    <div class="card mb-5" style="width: 22rem;">
+      <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg" class="card-img-top"
+        alt="restaurant-image">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">restaurant name</li>
+      </ul>
+      <div class="card-body d-flex justify-content-end align-items-center">
+        <a href="#" class="card-link">Edit</a>
+        <a href="#" class="card-link">Detail</a>
+        <button class="btn btn-outline-secondary mx-3">Delete</button>
+      </div>
+    </div>
+
+    <div class="card mb-5" style="width: 22rem;">
+      <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg" class="card-img-top"
+        alt="restaurant-image">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">restaurant name</li>
+      </ul>
+      <div class="card-body d-flex justify-content-end align-items-center">
+        <a href="#" class="card-link">Edit</a>
+        <a href="#" class="card-link">Detail</a>
+        <button class="btn btn-outline-secondary mx-3">Delete</button>
+      </div>
+    </div>
+
+    <div class="card mb-5" style="width: 22rem;">
+      <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg" class="card-img-top"
+        alt="restaurant-image">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">restaurant name</li>
+      </ul>
+      <div class="card-body d-flex justify-content-end align-items-center">
+        <a href="#" class="card-link">Edit</a>
+        <a href="#" class="card-link">Detail</a>
+        <button class="btn btn-outline-secondary mx-3">Delete</button>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
