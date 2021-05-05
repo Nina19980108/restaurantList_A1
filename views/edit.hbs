@@ -1,6 +1,6 @@
 <div class="container create-restaurant d-flex justify-content-center fw-light mt-5" style="color: aliceblue;">
 
-  <form action="/restaurant/{{ restaurant._id }}/edit" method="POST" class="w-50 px-5 d-flex flex-column">
+  <form action="/restaurant/{{ restaurant._id }}?_method=PUT" method="POST" class="w-50 px-5 d-flex flex-column">
 
     {{!-- 餐廳名稱 --}}
     <div class="mb-3">

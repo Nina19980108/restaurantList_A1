@@ -55,7 +55,7 @@
       <div class="card-body d-flex justify-content-end align-items-center">
         <a href="/restaurant/{{this._id}}/edit" class="card-link">Edit</a>
         <a href="/restaurant/{{this._id}}" class="card-link">Detail</a>
-        <form action="/restaurant/{{ this._id }}/delete" method="POST">
+        <form action="/restaurant/{{ this._id }}?_method=DELETE" method="POST">
           <button class="btn btn-outline-secondary mx-3">Delete</button>
         </form>
       </div>
