@@ -66,6 +66,14 @@ app.post('/restaurant/:id/edit', (req, res) => {
     .catch(error => console.error(error))
 })
 
+app.post('/restaurant/:id/delete', (req, res) => {
+  const id = req.params.id
+  return restaurant.findById(id)
+    .then(restaurant => restaurant.remove())
+    .then(() => res.redirect('/'))
+    .catch(error => console.error(error))
+})
+
 app.listen(port, () => {
   console.log(`Restaurant list is on http://localhost:${port}`)
 })
