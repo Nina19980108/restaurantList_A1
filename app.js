@@ -33,8 +33,8 @@ app.get('/restaurant/new', (req, res) => {
 })
 
 app.post('/restaurant/new', (req, res) => {
-  const { name, name_en, category, image, location, phone, google_map, rating, descrioption } = req.body
-  return restaurant.create({ name, name_en, category, image, location, phone, google_map, rating, descrioption })
+  const { name, name_en, category, image, location, phone, google_map, rating, description } = req.body
+  return restaurant.create({ name, name_en, category, image, location, phone, google_map, rating, description })
     .then(() => res.redirect('/'))
     .catch(error => console.error(error))
 })
