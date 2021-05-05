@@ -74,6 +74,11 @@ app.post('/restaurant/:id/delete', (req, res) => {
     .catch(error => console.error(error))
 })
 
+// app.get('/search', (req, res) => {
+//   const keyword = req.query.keyword
+//   console.log(keyword)
+// })
+
 app.listen(port, () => {
   console.log(`Restaurant list is on http://localhost:${port}`)
 })

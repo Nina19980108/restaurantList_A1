@@ -3,11 +3,16 @@
   <div class="container d-flex p-2 mt-5 justify-content-between">
 
     {{!-- search bar --}}
-    <div class="input-group mb-3 w-25">
-      <input type="text" class="form-control" placeholder="restaurant's name..." aria-label="restaurant's name"
-        aria-describedby="button-addon2">
-      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-    </div>
+    <form action="/search" class="d-flex">
+      <div class="input-group mb-3 d-flex">
+        <input type="text" class="form-control" placeholder="restaurant's name..." aria-label="restaurant's name"
+          aria-describedby="restaurant's name" name="keyword" value="">
+        <div class="input-group-append">
+          <button class="btn btn-light" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </form>
+
 
     {{!-- sort input --}}
     <div class="input-group mb-3 w-25">
