@@ -24,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.get('/', (req, res) => {
   restaurant.find()
     .lean()
+    .sort({ _id: 'asc' })
     .then(restaurant => res.render('index', { restaurant }))
     .catch(error => console.error(error))
 })
@@ -74,10 +75,51 @@ app.post('/restaurant/:id/delete', (req, res) => {
     .catch(error => console.error(error))
 })
 
-// app.get('/search', (req, res) => {
-//   const keyword = req.query.keyword
-//   console.log(keyword)
-// })
+app.get('/restaurant', (req, res) => {
+  let sort = req.query.sort
+  switch (sort) {
+    case 'A -> Z':
+      restaurant.find()
+        .lean()
+        .sort({ name: 'asc' })
+        .then(restaurant => res.render('index', { restaurant, sort }))
+        .catch(error => console.error(error))
+      return
+
+    case 'Z -> A':
+      restaurant.find()
+        .lean()
+        .sort({ name: 'desc' })
+        .then(restaurant => res.render('index', { restaurant, sort }))
+        .catch(error => console.error(error))
+      return
+
+    case 'category':
+      restaurant.find()
+        .lean()
+        .sort({ category: 'asc' })
+        .then(restaurant => res.render('index', { restaurant, sort }))
+        .catch(error => console.error(error))
+      return
+
+    case 'location':
+      restaurant.find()
+        .lean()
+        .sort({ location: 'asc' })
+        .then(restaurant => res.render('index', { restaurant, sort }))
+        .catch(error => console.error(error))
+      return
+
+    default:
+      restaurant.find()
+        .lean()
+        .sort({ _id: 'asc' })
+        .then(restaurant => res.render('index', { restaurant }))
+        .catch(error => console.error(error))
+      return
+  }
+
+})
 
 app.listen(port, () => {
   console.log(`Restaurant list is on http://localhost:${port}`)
