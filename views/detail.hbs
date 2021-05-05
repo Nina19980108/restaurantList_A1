@@ -26,6 +26,15 @@
 
       <p class="card-text mt-3 p-1">{{ restaurant.description }}</p>
     </div>
+
+    <div class="card-body d-flex justify-content-end align-items-center">
+      <a href="/" class="card-link">Back</a>
+      <a href="/restaurant/{{ restaurant._id }}/edit" class="card-link">Edit</a>
+      <form action="/restaurant/{{ restaurant._id }}/delete" method="POST">
+        <button class="btn btn-outline-secondary mx-3">Delete</button>
+      </form>
+    </div>
+
   </div>
 
 </div>
