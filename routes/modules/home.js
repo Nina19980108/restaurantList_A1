@@ -48,4 +48,15 @@ router.get('/', (req, res) => {
 
 })
 
+router.get('/search', (req, res) => {
+  const keyword = req.query.keyword
+  const query = new RegExp(keyword.trim(), 'i')
+  return restaurant.find({
+    $or: [{ name: query }, { name_en: query }, { category: query }]
+  })
+    .lean()
+    .then(restaurant => res.render('index', { restaurant, keyword }))
+    .catch(error => console.error(error))
+})
+
 module.exports = router
