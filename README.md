@@ -1,6 +1,6 @@
 # 我的餐廳清單
 
-一個使用 Node.js + Express 打造的餐廳美食網站，並透過 mongodb 資料庫取得資料，可以在首頁看到所有餐廳與它們的簡單資料，再點進去看餐廳的詳細資訊。可以自行新增餐廳，或是修改餐廳內容。
+一個使用 Node.js + Express 打造的餐廳美食網站，並透過 mongodb 資料庫取得資料，可以在首頁看到所有餐廳與它們的簡單資料，並選擇不同的排序方式。可以點擊觀看餐廳的詳細資訊。可以自行新增餐廳，或是修改餐廳內容。
 
 ## Features - 產品功能
 
@@ -8,6 +8,7 @@
 2. 使用者可以瀏覽一家餐廳的詳細資訊。
 3. 使用者可以修改一家餐廳的詳細資訊。
 4. 使用者可以新增一家餐廳。
+5. 使用者可以在首頁依不同方式排序餐廳。
 
 ## Environment SetUp - 環境建置
 
@@ -19,13 +20,13 @@
 1. 打開你的 terminal，Clone 此專案至本機電腦
 
 ```
-git clone https://github.com/Nina19980108/Restau_mongodb.git
+git clone https://github.com/Nina19980108/restaurant-list-refactor.git
 ```
 
 2. 開啟終端機(Terminal)，進入存放此專案的資料夾
 
 ```
-cd restaurant_mongodb
+cd restaurantlist_router
 ```
 
 3. 安裝 npm 套件
@@ -43,9 +44,9 @@ cd restaurant_mongodb
 5. 匯入種子檔案
 
 ```
-在 Terminal 找到 restSeeder.js 檔案
+在 Terminal 找到 restaurantSeeder.js 檔案
 
-執行 node models/seeds/restSeeder.js 匯入使用者與餐廳資料
+執行 node models/seeds/restaurantSeeder.js 匯入使用者與餐廳資料
 ```
 
 當 terminal 出現以下字樣，即表示種子資料已新增至資料庫，按下 ctrl + c 結束執行
@@ -53,7 +54,7 @@ cd restaurant_mongodb
 ```
 Mongodb is connected!
 
-done!
+done
 ```
 
 6. 啟動伺服器，執行 app.js 檔案
