@@ -9,6 +9,8 @@ const app = express()
 
 const routes = require('./routes')
 
+const usePassport = require('./config/passport')
+
 require('./config/mongoose')
 
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: 'hbs' }))
@@ -22,6 +24,9 @@ app.use(session({
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
+
+usePassport(app)
+
 app.use(routes)
 
 app.listen(port, () => {
