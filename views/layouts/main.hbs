@@ -17,9 +17,15 @@
   <nav class="navbar navbar-light bg-light">
     <div class="container-sm">
       <a class="navbar-brand fw-bold" href="/">Restaurant List</a>
-      <form class="d-flex" action="/restaurant/new">
-        <button class="btn btn-outline-secondary" type="submit">Create</button>
+      {{#if isAuthenticated }}
+      <form class="d-flex" action="/users/logout" method="GET">
+        <button class="btn btn-outline-secondary" type="submit">Logout</button>
       </form>
+      {{else}}
+      <form class="d-flex" action="/users/login" method="GET">
+        <button class="btn btn-outline-secondary" type="submit">Login</button>
+      </form>
+      {{/if}}
     </div>
   </nav>
 

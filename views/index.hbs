@@ -2,16 +2,23 @@
 
   <div class="container d-flex p-2 mt-5 justify-content-between ">
 
-    {{!-- search bar --}}
-    <form action="/search" class="d-flex">
-      <div class="input-group mb-3 d-flex h-25">
-        <input type="text" class="form-control" placeholder="restaurant's name..." aria-label="restaurant's name"
-          aria-describedby="restaurant's name" name="keyword" value="{{ keyword }}">
-        <div class="input-group-append">
-          <button class="btn btn-light" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+    <div class="d-flex">
+      {{!-- search bar --}}
+      <form action="/search" class="d-flex">
+        <div class="input-group mb-3 d-flex h-25">
+          <input type="text" class="form-control" placeholder="restaurant's name..." aria-label="restaurant's name"
+            aria-describedby="restaurant's name" name="keyword" value="{{ keyword }}">
+          <div class="input-group-append">
+            <button class="btn btn-light" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+
+      {{!-- Create btn --}}
+      <form class="h-75" action="/restaurant/new">
+        <button class="btn btn-secondary ms-3" type="submit">Create</button>
+      </form>
+    </div>
 
 
     <div>
