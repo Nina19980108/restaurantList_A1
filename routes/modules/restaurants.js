@@ -8,30 +8,34 @@ router.get('/new', (req, res) => {
 
 router.post('/new', (req, res) => {
   const { name, name_en, category, image, location, phone, google_map, rating, description } = req.body
-  return restaurant.create({ name, name_en, category, image, location, phone, google_map, rating, description })
+  const userId = req.user._id
+  return restaurant.create({ name, name_en, category, image, location, phone, google_map, rating, description, userId })
     .then(() => res.redirect('/'))
     .catch(error => console.error(error))
 })
 
 router.get('/:id', (req, res) => {
-  const id = req.params.id
-  return restaurant.findById(id)
+  const _id = req.params.id
+  const userId = req.user._id
+  return restaurant.findOne({ _id, userId })
     .lean()
     .then(restaurant => res.render('detail', { restaurant }))
     .catch(error => console.error(error))
 })
 
 router.get('/:id/edit', (req, res) => {
-  const id = req.params.id
-  return restaurant.findById(id)
+  const userId = req.user._id
+  const _id = req.params.id
+  return restaurant.findOne({ _id, userId })
     .lean()
     .then(restaurant => res.render('edit', { restaurant }))
     .catch(error => console.error(error))
 })
 
 router.put('/:id', (req, res) => {
-  const id = req.params.id
-  return restaurant.findById(id)
+  const userId = req.user._id
+  const _id = req.params.id
+  return restaurant.findOne({ _id, userId })
     .then(restaurant => {
       restaurant = Object.assign(restaurant, req.body)
       return restaurant.save()
@@ -41,8 +45,9 @@ router.put('/:id', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-  const id = req.params.id
-  return restaurant.findById(id)
+  const userId = req.user._id
+  const _id = req.params.id
+  return restaurant.findOne({ _id, userId })
     .then(restaurant => restaurant.remove())
     .then(() => res.redirect('/'))
     .catch(error => console.error(error))
