@@ -16,6 +16,10 @@ const userSchema = new Schema({
   createAt: {
     type: Date,
     default: Date.now
+  },
+  seedNum: {
+    type: Number,
+    required: false
   }
 })
 module.exports = mongoose.model('User', userSchema)
