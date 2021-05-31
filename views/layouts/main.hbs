@@ -16,7 +16,12 @@
 
   <nav class="navbar navbar-light bg-light">
     <div class="container-sm">
-      <a class="navbar-brand fw-bold" href="/">Restaurant List</a>
+      <a class="navbar-brand fw-bold" href="/">
+        {{#if userName}}
+        {{ userName }}'s
+        {{/if}}
+        Restaurant List
+      </a>
       {{#if isAuthenticated }}
       <form class="d-flex" action="/users/logout" method="GET">
         <button class="btn btn-outline-secondary" type="submit">Logout</button>

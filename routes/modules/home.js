@@ -5,6 +5,7 @@ const restaurant = require('../../models/restaurant')
 router.get('/', (req, res) => {
   let sort = req.query.sort
   const userId = req.user._id
+  res.locals.userName = req.user.name
   switch (sort) {
     case 'A -> Z':
       restaurant.find({ userId })
